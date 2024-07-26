@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beingFocused</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="todo-container">
+        <div id="header">
+            <h1>To Do List</h1>
+        </div>
+
+        <div id="todo-form">
+            <input 
+                type="text"
+                class="input-item"
+                name="input_box"
+                id="input-box"
+                placeholder="Add Task"
+            />
+
+            <button id="input-buttom" onclick="addTask()">Add</button>
+        </div>
+
+        <h2>Task List</h2>
+        <ul id="list-container"></ul>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
