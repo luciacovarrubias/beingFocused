@@ -18,8 +18,8 @@ function addTask() {
             <input type="checkbox">
             <span>${task}</span>
         </label>
-        <span class="edit-btn">Edit</span>
-        <span class="delete-btn">Delete</span>
+        <span class="delete-btn"><i class="fa-regular fa-trash-can" style="color: #cacfd8;"></i></span>
+        <span class="edit-btn"><i class="fa-regular fa-pen-to-square" style="color: #cacfd8;"></i></span>
         `;
 
     listContainer.appendChild(li);
