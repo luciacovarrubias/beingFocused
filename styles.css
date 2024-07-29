@@ -1,3 +1,93 @@
+body {
+    /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(54, 0%, 100%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(0, 3%, 71%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>") */
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(219, 211, 211, 0.028) 0%, rgb(133, 204, 212) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    }
+
+#todo-container{
+    background: rgba(3, 17, 96, 0.67);
+    /* background: radial-gradient(circle at bottom, rgba(74, 60, 60, 0.028) 0%, rgb(88, 92, 93) 100%); */
+    width: 400px;
+    margin: 0 auto;
+    border: 2px solid #494949;
+    padding: 20px;
+    color: rgb(255, 244, 244);
+    border-radius: 15px;
+
+    #header {
+        margin: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    h1{
+        margin-bottom: 20px;
+    }
+
+    #input-box {
+        width: 200px;
+        padding: 10px;
+        border: 1px solid #fffbfb;
+        border-radius: 15px;
+        margin-right: 5px;
+        font-size: 15px;
+    }
+
+    #input-button {
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.4s;
+        padding: 10px;
+        border: none;
+        border-radius: 15px;
+        background-color: #2c59b985;
+    }
+
+    #input-button:hover{
+        background-color: #d3992b;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+li{
+    /* border: 1px solid white;
+    border-radius: 5px; */
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.edit-btn, .delete-btn {
+    float: right;
+    color: rgb(176, 183, 186);
+    cursor: pointer;
+    margin: 3px 5px;
+    background: none;
+}
+.edit-btn:hover, .delete-btn:hover{
+    color: white;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: gray;
+    border: 1px solid gray;
+}
+
+
+
+
+
+
 .completed {
     text-decoration: line-through;
     color: gray;

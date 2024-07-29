@@ -37,11 +37,13 @@ function addTask() {
 
     editBtn.addEventListener("click", function(){
         const update = prompt("Edit task:", taskSpan.textContent);
-        if (update !== null) {
+        if (update !== null && update.trim() !=="") {
             taskSpan.textContent = update;
             li.classList.remove("completed");
             checkbox.checked = false;
             updateCounters();
+        } else if (update !== null && update.trim() === ""){
+            alert("Task cannot be empty!");
         }
     });
 
