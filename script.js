@@ -44,6 +44,13 @@ function addTask() {
             updateCounters();
         }
     });
+
+    deleteBtn.addEventListener("click", function(){
+        if(confirm("Are you sure you want to delete this task?")){
+            li.remove();
+            updateCounters();
+        }
+    })
 }
 
 function updateCounters(){
@@ -57,5 +64,3 @@ function updateCounters(){
 }
 
 
-
-/*comentario para probar el email desde el que se suben los commits */
