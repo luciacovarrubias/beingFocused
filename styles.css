@@ -6,7 +6,67 @@ body {
     font-family: "Asap", sans-serif;
     text-align: center;
     margin-top: 50px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     }
+
+    .container {  display: grid;
+        grid-template-columns: 1.1fr 1fr 0.9fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        grid-auto-rows: 1fr;
+        gap: 9px 9px;
+        grid-auto-flow: row dense;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas:
+          "Title Title Title"
+          "ToDoList Pomodoro NoDefinido"
+          "ToDoList Calendario Spotify";
+      }
+      
+      .Title {
+        justify-self: center;
+        align-self: center;
+        grid-area: Title;
+        width: 70%;
+        height: 80%;
+      }
+      
+      .ToDoList {
+        justify-self: stretch;
+        align-self: start;
+        grid-area: ToDoList;
+      }
+      
+      .Spotify {
+        justify-self: stretch;
+        align-self: center;
+        grid-area: Spotify;
+      }
+      
+      .Pomodoro {
+        justify-self: stretch;
+        align-self: stretch;
+        grid-area: Pomodoro;
+      }
+      
+      .Calendario {
+        justify-self: stretch;
+        align-self: stretch;
+        grid-area: Calendario;
+      }
+      
+      .NoDefinido {
+        justify-self: stretch;
+        align-self: stretch;
+        grid-area: NoDefinido;
+      }
+      
+      
+      
+      
 
 #todo-container{
     background: rgba(3, 17, 96, 0.615);

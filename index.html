@@ -11,32 +11,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    <div id="todo-container">
-        <div id="header">
-            <h1>To Do List</h1>
+    <div class="container">
+        <div class="Title">
+            <h1>Final de Historia</h1>
         </div>
 
-        <div id="todo-form">
-            <input 
-                type="text"
-                class="input-item"
-                name="input_box"
-                id="input-box"
-                placeholder="Add Task"
-            />
-
-            <button id="input-buttom" onclick="addTask()">Add</button>
-        </div>
-
-        <h2>Task List</h2>
-        <ul id="list-container"></ul>
-        <hr>
-
-        <div class="counter-container">
-            <div id="task-counters">
-                Completed: <span id="completed-counter">0</span> | Uncompleted: <span id="uncompleted-counter">0</span>
+        <div class="ToDoList">
+            <div id="todo-container">
+                <div id="header">
+                    <h1>To Do List</h1>
+                </div>
+        
+                <div id="todo-form">
+                    <input 
+                        type="text"
+                        class="input-item"
+                        name="input_box"
+                        id="input-box"
+                        placeholder="Add Task"
+                    />
+        
+                    <button id="input-buttom" onclick="addTask()">Add</button>
+                </div>
+        
+                <h2>Task List</h2>
+                <ul id="list-container"></ul>
+                <hr>
+        
+                <div class="counter-container">
+                    <div id="task-counters">
+                        Completed: <span id="completed-counter">0</span> | Uncompleted: <span id="uncompleted-counter">0</span>
+                    </div>
+                </div>
+        
             </div>
         </div>
+    
+        <div class="Spotify">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6vMYEo1uOJUizQAIVdUfv9?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="Pomodoro"></div>
+        <div class="Calendario"></div>
+        <div class="NoDefinido"></div>
 
     </div>
 
