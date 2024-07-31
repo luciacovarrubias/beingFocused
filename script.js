@@ -4,13 +4,13 @@ const listContainer = document.getElementById("list-container");
 const completedCounter = document.getElementById("completed-counter");
 const uncompletedCounter = document.getElementById("uncompleted-counter");
 
-const bells = new Audio ('./sounds/bell.wav');
-const startBtn = document.querySelector('.btn-start');
-const session = document.querySelector('.minutes');
-let myInterval;
-let state = true;
-let paused = false;
-let totalSeconds;
+// const bells = new Audio ('./sounds/bell.wav');
+// const startBtn = document.querySelector('.btn-start');
+// const session = document.querySelector('.minutes');
+// let myInterval;
+// let state = true;
+// let paused = false;
+// let totalSeconds;
 
 
 function addTask() {
@@ -74,73 +74,71 @@ function updateCounters(){
 }
 
 
-const appTimer = () =>{
-    const sessionAmount = Number.parseInt(session.innerText);
-    if(state) {
-        state = false;
-        paused = false;
-        let totalSeconds = sessionAmount*60;
+// const appTimer = () =>{
+//     const sessionAmount = Number.parseInt(session.innerText);
+//     if(state) {
+//         state = false;
+//         paused = false;
+//         totalSeconds = sessionAmount*60;
 
-        const updateSeconds = () => {
-            if(!paused){
-                totalSeconds--;
+//         const updateSeconds = () => {
+//             if(!paused){
+//                 totalSeconds--;
 
-                const minuteDiv = document.querySelector('.minutes');
-                const secondDiv = document.querySelector('.seconds');
+//                 const minuteDiv = document.querySelector('.minutes');
+//                 const secondDiv = document.querySelector('.seconds');
 
-                totalSeconds--;
+//                 let minutesLeft = Math.floor(totalSeconds/60);
+//                 let secondsLeft = totalSeconds % 60;
 
-                let minutesLeft = Math.floor(totalSeconds/60);
-                let secondsLeft = totalSeconds % 60;
+//                 if (secondsLeft < 10){
+//                     secondDiv.textContent = '0' + secondsLeft;
+//                 } else {
+//                     secondDiv.textContent = secondsLeft;
+//                 }
+//                 minuteDiv.textContent = minutesLeft;
 
-                if (secondsLeft < 10){
-                    secondDiv.textContent = '0' + secondsLeft;
-                } else {
-                    secondDiv.textContent = secondsLeft;
-                }
-                minuteDiv.textContent = minutesLeft;
+//                 if(minutesLeft === 0 && secondsLeft === 0) {
+//                     bells.play()
+//                     clearInterval(myInterval);
+//                     state = true;
+//                 }
+//             }
+//         };
 
-                if(minutesLeft === 0 && secondsLeft === 0) {
-                    bells.play()
-                    clearInterval(myInterval);
-                    state = true;
-                }
-            }
-        };
+//         myInterval = setInterval(updateSeconds, 1000);
+//     } else {
+//         alert('Session has already staryed.');
+//     }
+// };
 
-        myInterval = setInterval(updateSeconds, 1000);
-    } else {
-        alert('Session has already staryed.');
-    }
-};
+// const pauseTimer = () =>{
+//     paused = !paused;
+//     const pauseBtn = document.getElementById('pauseBtn');
+//     if (paused) {
+//         pauseBtn.textContent = 'Resume';
+//     } else {
+//         pauseBtn.textContent = 'Pause';
+//     }
+// };
 
-const pauseTimer = () =>{
-    paused = !paused;
-    const pauseBtn = document.getElementById('pauseBtn');
-    if (paused) {
-        pauseBtn.textContent = 'Resume';
-    } else {
-        pauseBtn.textContent = 'Pause';
-    }
-};
+// const resetTimer = () => {
+//     clearInterval(myInterval);
+//     state = true;
+//     paused= false;
+//     totalSeconds = 0;
 
-const resetTimer = () => {
-    clearInterval(myInterval);
-    state = true;
-    paused= false;
-    totalSeconds = 0;
+//     const minuteDiv = document.querySelector('.minutes');
+//     const secondDiv = document.querySelector('.seconds');
+//     minuteDiv.textContent = '25';
+//     secondDiv.textContent = '00';
 
-    const minuteDiv = document.querySelector('.minutes');
-    const secondDiv = document.querySelector('.seconds');
-    minuteDiv.textContent = '25';
-    secondDiv.textContent = '00';
+//     const pauseBtn = document.getElementById('pauseBtn');
+//     pauseBtn.textContent = 'Pause';
+// };
 
-    const pauseBtn = document.getElementById('pauseBtn');
-    pauseBtn.textContent = 'Pause';
-};
+// document.getElementById('startBtn').addEventListener('click', appTimer);
+// document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
+// document.getElementById('resetBtn').addEventListener('click', resetTimer);
 
-document.getElementById('startBtn').addEventListener('click', appTimer);
-document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
-document.getElementById('resetBtn').addEventListener('click', resetTimer);
-
-startBtn.addEventListener('click', appTimer);
+// // startBtn.addEventListener('click', appTimer);
