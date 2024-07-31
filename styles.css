@@ -58,6 +58,7 @@ body {
             text-align: center;
             border-radius: 5px;
             padding: 20px;
+            font-size: 20px;
           }
 
           .app-circle{
@@ -145,10 +146,6 @@ body {
       }
       
       
-      
-      
-      
-      
 
 #todo-container{
     background: rgba(3, 17, 96, 0.615);
@@ -171,6 +168,7 @@ body {
 
 h1{
     margin-bottom: 20px;
+    color: white;
 }
 
 #input-box {

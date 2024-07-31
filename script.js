@@ -79,7 +79,7 @@ const appTimer = () =>{
     if(state) {
         state = false;
         paused = false;
-        let totalSeconds = sessionAmount*60;
+        totalSeconds = sessionAmount*60;
 
         const updateSeconds = () => {
             if(!paused){
@@ -87,8 +87,6 @@ const appTimer = () =>{
 
                 const minuteDiv = document.querySelector('.minutes');
                 const secondDiv = document.querySelector('.seconds');
-
-                totalSeconds--;
 
                 let minutesLeft = Math.floor(totalSeconds/60);
                 let secondsLeft = totalSeconds % 60;
@@ -143,4 +141,4 @@ document.getElementById('startBtn').addEventListener('click', appTimer);
 document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
 document.getElementById('resetBtn').addEventListener('click', resetTimer);
 
-startBtn.addEventListener('click', appTimer);
+// startBtn.addEventListener('click', appTimer);
