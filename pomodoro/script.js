@@ -9,6 +9,10 @@ let workSessions = 0;
 let interval;
 let totalTime;
 
+const descanso = new Audio("../sound/descanso.wav");
+const descansoLargo = new Audio ("../sound/descansoLargo.wav");
+const ciclo = new Audio ("../sound/ciclo.wav");
+
 function startTimer() {
     if (isPaused) {
         isPaused = false;
@@ -50,11 +54,14 @@ function updateTimer() {
             if (workSessions % 4 === 0) {
                 currentTime = longBreakTime;
                 cycles++;
+                ciclo.play();
                 document.getElementById('cycles').textContent = cycles;
                 document.getElementById('timerLabel').textContent = 'Descanso Largo';
+                descansoLargo.play();
             } else {
                 currentTime = breakTime;
                 document.getElementById('timerLabel').textContent = 'Descanso';
+                descanso.play();
             }
             isWork = false;
         } else {
