@@ -6,7 +6,6 @@ let isWork = true;
 let isPaused = true;
 let cycles = 0;
 let workSessions = 0;
-let pomodoros = 0; // Variable para contar Pomodoros
 let interval;
 let totalTime;
 
@@ -30,9 +29,7 @@ function resetTimer() {
     isPaused = true;
     cycles = 0;
     workSessions = 0;
-    pomodoros = 0; // Reiniciar el contador de Pomodoros
     document.getElementById('cycles').textContent = cycles;
-    document.getElementById('pomodoros').textContent = pomodoros; // Actualizar la visualización
     isWork = true;
     workTime = document.getElementById('workTime').value * 60;
     breakTime = document.getElementById('breakTime').value * 60;
@@ -53,9 +50,7 @@ function updateTimer() {
             if (workSessions % 4 === 0) {
                 currentTime = longBreakTime;
                 cycles++;
-                pomodoros++; // Incrementar el contador de Pomodoros
                 document.getElementById('cycles').textContent = cycles;
-                document.getElementById('pomodoros').textContent = pomodoros; // Actualizar la visualización
                 document.getElementById('timerLabel').textContent = 'Descanso Largo';
             } else {
                 currentTime = breakTime;
@@ -80,7 +75,7 @@ function updateDisplay() {
 }
 
 function updateProgressBar() {
-    const progress = ((totalTime - currentTime) / totalTime) * 100;
+    const progress = (workSessions % 4) / 4 * 100;
     document.getElementById('progressBar').style.width = `${progress}%`;
 }
 
@@ -88,5 +83,4 @@ function resetProgressBar() {
     document.getElementById('progressBar').style.width = '0%';
 }
 
-// Llamada inicial para configurar el temporizador
 resetTimer();
