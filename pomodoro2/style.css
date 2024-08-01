@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+#timer {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+}
+
+#progressBar {
+    width: 0%;
+    height: 30px;
+    background-color: #76c7c0;
+}

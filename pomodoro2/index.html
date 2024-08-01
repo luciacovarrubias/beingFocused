@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+    <div>
+        <label for="workTime">Tiempo de trabajo (minutos):</label>
+        <input type="number" id="workTime" value="25" min="1">
+    </div>
+    <div>
+        <label for="breakTime">Tiempo de descanso (minutos):</label>
+        <input type="number" id="breakTime" value="5" min="1">
+    </div>
+    <div>
+        <label for="longBreakTime">Tiempo de descanso largo (minutos):</label>
+        <input type="number" id="longBreakTime" value="10" min="1">
+    </div>
+    <div>
+        <h2 id="timerLabel">Trabajo</h2>
+        <p id="timer">25:00</p>
+        <button onclick="startTimer()">Iniciar</button>
+        <button onclick="pauseTimer()">Pausar</button>
+        <button onclick="resetTimer()">Reiniciar</button>
+    </div>
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+    <div>
+        <h3>Ciclos completados: <span id="cycles">0</span></h3>
+        <h3>Pomodoros completados: <span id="pomodoros">0</span></h3> <!-- Contador de Pomodoros -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
