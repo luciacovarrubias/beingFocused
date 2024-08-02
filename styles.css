@@ -5,7 +5,7 @@ body {
     background: radial-gradient(circle, rgba(219, 211, 211, 0.028)0%,rgb(49, 58, 109) 100%);
     font-family: "Asap", sans-serif;
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     height: 100%;
     margin: 0;
     padding-left: 10px;
@@ -13,7 +13,7 @@ body {
     }
 
     .container {  display: grid;
-        grid-template-columns: 1.1fr 0.8fr 1.1fr;
+        grid-template-columns: 1.1fr 1.1fr 1.1fr;
         grid-template-rows: 0.5fr 1fr 1fr;
         /* grid-auto-rows: 1fr; */
         gap: 9px 9px;
@@ -23,7 +23,7 @@ body {
         align-items: center;
         grid-template-areas:
           "Title Title Title"
-          "ToDoList Pomodoro NoDefinido"
+          "ToDoList Pomodoro Spotify"
           "ToDoList Calendario Spotify";
       }
       
@@ -37,6 +37,91 @@ body {
         justify-self: stretch;
         align-self: start;
         grid-area: ToDoList;
+
+        #todo-container {
+            background: rgba(3, 17, 96, 0.615);
+            /* background: radial-gradient(circle, rgba(74, 60, 60, 0.028) 0%, rgb(41, 46, 196) 100%); */
+            /* background: radial-gradient(ellipse at top, #888790, transparent),
+                        radial-gradient(ellipse at bottom, #4e52a9, transparent); */
+            width: 400px;
+            margin: 0 auto;
+            border: 2px solid #d8cdcd;
+            padding: 20px;
+            color: rgb(255, 244, 244);
+            border-radius: 15px;
+        
+        }
+        #header {
+            margin: 5px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        h1{
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        #input-box {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #fffbfb;
+            border-radius: 15px;
+            margin-right: 5px;
+            font-size: 15px;
+        }
+        
+        #input-buttom {
+            font-family: "Asap", sans-serif;
+            font-size: 12px;
+            color: #fffbfb;
+            cursor: pointer;
+            transition: 0.4s;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 1px solid #fffbfb;
+            border-radius: 15px;
+            background-color: #676f9a;
+        }
+        
+        #input-buttom:hover{
+            background-color: #bacbbc;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        li{
+            /* border: 1px solid white;
+            border-radius: 5px; */
+            margin-bottom: 10px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        
+        .edit-btn, .delete-btn {
+            float: right;
+            /* color: rgb(245, 251, 253); */
+            cursor: pointer;
+            margin: 3px 5px;
+            background: none;
+        }
+        .edit-btn:hover i, .delete-btn:hover i{
+            color: rgb(171, 10, 10);
+        }
+        
+        .completed{
+            text-decoration:line-through;
+            color: rgb(153, 168, 183);
+            /* border: 1px solid gray; */
+        }
+
       }
       
       .Spotify {
@@ -46,91 +131,153 @@ body {
       }
       
       .Pomodoro {
-        justify-self: stretch;
-        align-self: start;
-        grid-area: Pomodoro;
+        text-align: center;
+        background: rgba(3, 17, 96, 0.615);
+        color: rgb(255, 244, 244);
+        /* width: 400px; */
+        margin: 0 auto;
+        border: 2px solid #d8cdcd;
+        padding: 20px;
+        border-radius: 15px;
+        display:grid; 
+      grid-template-columns: 1fr 1fr 1fr; 
+      /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  */
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "pomodoroTitle pomodoroTitle pomodoroTitle"
+        "trabajo descanso descansoLargo"
+        "trabajo descanso descansoLargo"
+        ". textDisplay ."
+        ". timerDisplay ."
+        "botonIniciar botonPausar botonReiniciar"
+        "ciclosCompletados ciclosCompletados ciclosCompletados"
+        "progressBar progressBar progressBar"; 
+      justify-self: stretch; 
+      align-self: stretch; 
+      grid-area: Pomodoro; 
+    
+        .pomodoroTitle {
+        justify-self: stretch; 
+        align-self: center; 
+        margin-top: 20px;
+        padding-bottom: 20px;
+        font-size: 20px;
+        grid-area: pomodoroTitle; 
+        }
+        .trabajo { 
+            grid-area: trabajo;
+            justify-self: stretch;
+            align-self: center;
+
+            input {
+                width: 50px;
+                padding: 10px;
+                border: 1px solid #fffbfb;
+                border-radius: 15px;
+                margin-right: 5px;
+                font-size: 15px;
+            }
+         }
+        .descanso { 
+            grid-area: descanso;
+            justify-self: stretch; 
+            align-self: center; 
+
+            input {
+                width: 50px;
+                padding: 10px;
+                border: 1px solid #fffbfb;
+                border-radius: 15px;
+                margin-right: 5px;
+                font-size: 15px;
+            }
+         }
+        .descansoLargo { 
+            grid-area: descansoLargo;
+            justify-self: stretch;
+            align-self: center;
+
+            input {
+                width: 50px;
+                padding: 10px;
+                border: 1px solid #fffbfb;
+                border-radius: 15px;
+                margin-right: 5px;
+                font-size: 15px;
+            }
+         }
+        .textDisplay { 
+            font-size: larger;
+            grid-area: textDisplay;
+            align-self: center;
+        }
+        .timerDisplay { grid-area: timerDisplay; }
+        .botonIniciar { 
+            display:inline-block; 
+            grid-area: botonIniciar;
+            justify-self:end;
+            align-self: center;
+         }
+        .botonPausar { 
+            grid-area: botonPausar;
+            justify-self: stretch;
+            align-self: center;
+         }
+        .botonReiniciar { 
+            grid-area: botonReiniciar;
+            justify-self: start;
+            align-self: center;
+         }
+        .ciclosCompletados {
+        justify-self: center; 
+        align-self: center; 
+        grid-area: ciclosCompletados; 
+        }
+        .progressBar {
+        justify-self: stretch; 
+        align-self: center; 
+        grid-area: progressBar; 
+        }
+    
+        h1, h2, h3 {
+            margin: 10px 0;
+        }
         
-          
-          /* .Pomodoro {
-            width: 250px;
-            height: 420px;
-            margin: 40px auto;
-            text-align: center;
-            border-radius: 5px;
-            padding: 20px;
-            font-size: 20px;
+        #timer {
+            font-size: 5em;
+            margin: 5px 0;
+        }
+        
+        button {
+            font-family: "Asap", sans-serif;
+            font-size: 12px;
+            color: #fffbfb;
+            cursor: pointer;
+            transition: 0.4s;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: 1px solid #fffbfb;
+            border-radius: 15px;
+            background-color: #676f9a;
+        }
+    
+        button:hover {
+            background-color: #bacbbc;
           }
-
-          .app-circle{
-            position: relative;
-            margin: 0 auto;
-            width: 200px;
-            height: 200px;
-          }
-          
-          .circle-shape{
-            pointer-events: none;
-          }
-
-          .semi-circle {
-            position: absolute;
-            width: 100px;
-            height: 200px;
-            box-sizing: border-box;
-            border: solid 6px;
-          }
-
-          .left-side {
-            top: 0;
-            left: 0;
-            transform-origin: right center;
-            transform: rotate(0deg);
-            border-top-left-radius: 100px;
-            border-bottom-left-radius: 100px;
-            border-right: none;
-            z-index: 1;
-          }
-
-          .right-side {
-            top: 0;
-            left: 100px;
-            transform-origin: left center;
-            transform: rotate(0deg);
-            border-top-right-radius: 100px;
-            border-bottom-right-radius: 100px;
-            border-left: none;
-          }
-
-          .circle {
-            border-color: #2d2d6b;
-          }
-          .circle-mask {
-            border-color: #36397e;
-          }
-
-          .app-counter-box {
-            font-size: 250%;
-            position: relative;
-            top: 50px;
-            color: #000000;
-          }
-
-          button {
-            position: relative;
-            top: 50px;
-            font-size: 80%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: none;
-            background: none;
-            outline: none;
-            color: #000000;
-            margin: 5px;
-          }
-
-          button:hover{
-            color: #90c0d1;
-          } */
+        
+        #progressBarContainer {
+            width: 100%;
+            background-color: #e0e0e0;
+            margin: 20px 0;
+        }
+        
+        #progressBar {
+            width: 0%;
+            height: 10px;
+            background-color: #76c7c0;
+        }
       }
       
       .Calendario {
@@ -145,88 +292,3 @@ body {
         grid-area: NoDefinido;
       }
       
-      
-
-#todo-container{
-    background: rgba(3, 17, 96, 0.615);
-    /* background: radial-gradient(circle, rgba(74, 60, 60, 0.028) 0%, rgb(41, 46, 196) 100%); */
-    /* background: radial-gradient(ellipse at top, #888790, transparent),
-                radial-gradient(ellipse at bottom, #4e52a9, transparent); */
-    width: 400px;
-    margin: 0 auto;
-    border: 2px solid #d8cdcd;
-    padding: 20px;
-    color: rgb(255, 244, 244);
-    border-radius: 15px;
-
-}
-#header {
-    margin: 5px;
-    font-size: 20px;
-    text-align: center;
-}
-
-h1{
-    margin-bottom: 20px;
-    color: white;
-}
-
-#input-box {
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #fffbfb;
-    border-radius: 15px;
-    margin-right: 5px;
-    font-size: 15px;
-}
-
-#input-buttom {
-    font-family: "Asap", sans-serif;
-    font-size: 12px;
-    color: #fffbfb;
-    cursor: pointer;
-    transition: 0.4s;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 1px solid #fffbfb;
-    border-radius: 15px;
-    background-color: #676f9a;
-}
-
-#input-buttom:hover{
-    background-color: #bacbbc;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    text-align: left;
-}
-
-li{
-    /* border: 1px solid white;
-    border-radius: 5px; */
-    margin-bottom: 10px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.edit-btn, .delete-btn {
-    float: right;
-    /* color: rgb(245, 251, 253); */
-    cursor: pointer;
-    margin: 3px 5px;
-    background: none;
-}
-.edit-btn:hover i, .delete-btn:hover i{
-    color: rgb(171, 10, 10);
-}
-
-.completed{
-    text-decoration:line-through;
-    color: rgb(153, 168, 183);
-    /* border: 1px solid gray; */
-}
