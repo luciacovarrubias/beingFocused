@@ -4,14 +4,6 @@ const listContainer = document.getElementById("list-container");
 const completedCounter = document.getElementById("completed-counter");
 const uncompletedCounter = document.getElementById("uncompleted-counter");
 
-// const bells = new Audio ('./sounds/bell.wav');
-// const startBtn = document.querySelector('.btn-start');
-// const session = document.querySelector('.minutes');
-// let myInterval;
-// let state = true;
-// let paused = false;
-// let totalSeconds;
-
 
 function addTask() {
     const task = inputBox.value.trim();
@@ -44,19 +36,19 @@ function addTask() {
     });
 
     editBtn.addEventListener("click", function(){
-        const update = prompt("Edit task:", taskSpan.textContent);
+        const update = prompt("Editar tarea:", taskSpan.textContent);
         if (update !== null && update.trim() !=="") {
             taskSpan.textContent = update;
             li.classList.remove("completed");
             checkbox.checked = false;
             updateCounters();
         } else if (update !== null && update.trim() === ""){
-            alert("Task cannot be empty!");
+            alert("La tarea no puede estar vacía!");
         }
     });
 
     deleteBtn.addEventListener("click", function(){
-        if(confirm("Are you sure you want to delete this task?")){
+        if(confirm("Estas seguro de eliminar esta tarea?")){
             li.remove();
             updateCounters();
         }
@@ -73,72 +65,96 @@ function updateCounters(){
     updateCounters();
 }
 
+let workTime = 25 * 60;
+let breakTime = 5 * 60;
+let longBreakTime = 10 * 60;
+let currentTime = workTime;
+let isWork = true;
+let isPaused = true;
+let cycles = 0;
+let workSessions = 0;
+let interval;
+let totalTime;
 
-// const appTimer = () =>{
-//     const sessionAmount = Number.parseInt(session.innerText);
-//     if(state) {
-//         state = false;
-//         paused = false;
-//         totalSeconds = sessionAmount*60;
+const descanso = new Audio("sound/descanso.wav");
+const descansoLargo = new Audio ("sound/descansoLargo.wav");
+const ciclo = new Audio ("sound/ciclo.wav");
 
-//         const updateSeconds = () => {
-//             if(!paused){
-//                 totalSeconds--;
+function startTimer() {
+    if (isPaused) {
+        isPaused = false;
+        totalTime = currentTime;
+        interval = setInterval(updateTimer, 1000);
+    }
+}
 
-//                 const minuteDiv = document.querySelector('.minutes');
-//                 const secondDiv = document.querySelector('.seconds');
+function pauseTimer() {
+    if (!isPaused) {
+        clearInterval(interval);
+        isPaused = true;
+    }
+}
 
-//                 let minutesLeft = Math.floor(totalSeconds/60);
-//                 let secondsLeft = totalSeconds % 60;
+function resetTimer() {
+    clearInterval(interval);
+    isPaused = true;
+    cycles = 0;
+    workSessions = 0;
+    document.getElementById('cycles').textContent = cycles;
+    isWork = true;
+    workTime = document.getElementById('workTime').value * 60;
+    breakTime = document.getElementById('breakTime').value * 60;
+    longBreakTime = document.getElementById('longBreakTime').value * 60;
+    currentTime = workTime;
+    document.getElementById('timerLabel').textContent = 'Trabajo';
+    updateDisplay();
+    resetProgressBar();
+}
 
-//                 if (secondsLeft < 10){
-//                     secondDiv.textContent = '0' + secondsLeft;
-//                 } else {
-//                     secondDiv.textContent = secondsLeft;
-//                 }
-//                 minuteDiv.textContent = minutesLeft;
+function updateTimer() {
+    if (currentTime > 0) {
+        currentTime--;
+        updateProgressBar();
+    } else {
+        if (isWork) {
+            workSessions++;
+            if (workSessions % 4 === 0) {
+                currentTime = longBreakTime;
+                cycles++;
+                ciclo.play();
+                document.getElementById('cycles').textContent = cycles;
+                document.getElementById('timerLabel').textContent = 'Descanso Largo';
+                descansoLargo.play();
+            } else {
+                currentTime = breakTime;
+                document.getElementById('timerLabel').textContent = 'Descanso';
+                descanso.play();
+            }
+            isWork = false;
+        } else {
+            isWork = true;
+            currentTime = workTime;
+            document.getElementById('timerLabel').textContent = 'Trabajo';
+        }
+        totalTime = currentTime;
+        resetProgressBar();
+    }
+    updateDisplay();
+}
 
-//                 if(minutesLeft === 0 && secondsLeft === 0) {
-//                     bells.play()
-//                     clearInterval(myInterval);
-//                     state = true;
-//                 }
-//             }
-//         };
+function updateDisplay() {
+    const minutes = Math.floor(currentTime / 60);
+    const seconds = currentTime % 60;
+    document.getElementById('timer').textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
 
-//         myInterval = setInterval(updateSeconds, 1000);
-//     } else {
-//         alert('Session has already staryed.');
-//     }
-// };
+function updateProgressBar() {
+    const progress = (workSessions % 4) / 4 * 100;
+    document.getElementById('progressBar').style.width = `${progress}%`;
+}
 
-// const pauseTimer = () =>{
-//     paused = !paused;
-//     const pauseBtn = document.getElementById('pauseBtn');
-//     if (paused) {
-//         pauseBtn.textContent = 'Resume';
-//     } else {
-//         pauseBtn.textContent = 'Pause';
-//     }
-// };
+function resetProgressBar() {
+    document.getElementById('progressBar').style.width = '0%';
+}
 
-// const resetTimer = () => {
-//     clearInterval(myInterval);
-//     state = true;
-//     paused= false;
-//     totalSeconds = 0;
-
-//     const minuteDiv = document.querySelector('.minutes');
-//     const secondDiv = document.querySelector('.seconds');
-//     minuteDiv.textContent = '25';
-//     secondDiv.textContent = '00';
-
-//     const pauseBtn = document.getElementById('pauseBtn');
-//     pauseBtn.textContent = 'Pause';
-// };
-
-// document.getElementById('startBtn').addEventListener('click', appTimer);
-// document.getElementById('pauseBtn').addEventListener('click', pauseTimer);
-// document.getElementById('resetBtn').addEventListener('click', resetTimer);
-
-// // startBtn.addEventListener('click', appTimer);
+resetTimer();
