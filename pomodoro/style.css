@@ -1,33 +1,132 @@
-body {
+.Pomodoro {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: black;
+    /* background-image:url('../images/backgrounPomodoro.png'); */
+    color: #ffffff;
     margin: 0;
     padding: 0;
+    display:grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "pomodoroTitle pomodoroTitle pomodoroTitle"
+    "trabajo descanso descansoLargo"
+    "trabajo descanso descansoLargo"
+    ". textDisplay ."
+    ". timerDisplay ."
+    "botonIniciar botonPausar botonReiniciar"
+    "ciclosCompletados ciclosCompletados ciclosCompletados"
+    "progressBar progressBar progressBar"; 
+  justify-self: stretch; 
+  align-self: stretch; 
+  grid-area: Pomodoro; 
+
+    .pomodoroTitle {
+    justify-self: stretch; 
+    align-self: center; 
+    grid-area: pomodoroTitle; 
+    }
+    .trabajo { 
+        grid-area: trabajo;
+        justify-self: stretch;
+        align-self: center;
+     }
+    .descanso { 
+        grid-area: descanso;
+        justify-self: stretch; 
+        align-self: center; 
+     }
+    .descansoLargo { 
+        grid-area: descansoLargo;
+        justify-self: stretch;
+        align-self: center;
+     }
+    .textDisplay { 
+        grid-area: textDisplay;
+        align-self: center;
+    }
+    .timerDisplay { grid-area: timerDisplay; }
+    .botonIniciar { 
+        display:inline-block; 
+        grid-area: botonIniciar;
+        justify-self: stretch;
+        align-self: center;
+     }
+    .botonPausar { 
+        grid-area: botonPausar;
+        justify-self: stretch;
+        align-self: center;
+     }
+    .botonReiniciar { 
+        grid-area: botonReiniciar;
+        justify-self: stretch;
+        align-self: center;
+     }
+    .ciclosCompletados {
+    justify-self: center; 
+    align-self: center; 
+    grid-area: ciclosCompletados; 
+    }
+    .progressBar {
+    justify-self: stretch; 
+    align-self: center; 
+    grid-area: progressBar; 
+    }
+
+    h1, h2, h3 {
+        margin: 10px 0;
+    }
+    
+    #timer {
+        font-size: 5em;
+        margin: 20px 0;
+    }
+    
+    button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 1em;
+        background: #e1eef7;
+        background-image: -webkit-linear-gradient(top, #e1eef7, #2980b9);
+        background-image: -moz-linear-gradient(top, #e1eef7, #2980b9);
+        background-image: -ms-linear-gradient(top, #e1eef7, #2980b9);
+        background-image: -o-linear-gradient(top, #e1eef7, #2980b9);
+        background-image: linear-gradient(to bottom, #e1eef7, #2980b9);
+        -webkit-border-radius: 60;
+        -moz-border-radius: 60;
+        border-radius: 60px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        border: solid #1f628d 1px;
+        text-decoration: none;
+    }
+
+    button:hover {
+        background: #2d9de3;
+        background-image: -webkit-linear-gradient(top, #2d9de3, #2d88c4);
+        background-image: -moz-linear-gradient(top, #2d9de3, #2d88c4);
+        background-image: -ms-linear-gradient(top, #2d9de3, #2d88c4);
+        background-image: -o-linear-gradient(top, #2d9de3, #2d88c4);
+        background-image: linear-gradient(to bottom, #2d9de3, #2d88c4);
+        text-decoration: none;
+      }
+    
+    #progressBarContainer {
+        width: 100%;
+        background-color: #e0e0e0;
+        margin: 20px 0;
+    }
+    
+    #progressBar {
+        width: 0%;
+        height: 10px;
+        background-color: #76c7c0;
+    }
+
 }
 
-h1, h2, h3 {
-    margin: 10px 0;
-}
 
-#timer {
-    font-size: 2em;
-    margin: 20px 0;
-}
-
-button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-}
-
-#progressBarContainer {
-    width: 100%;
-    background-color: #e0e0e0;
-    margin: 20px 0;
-}
-
-#progressBar {
-    width: 0%;
-    height: 10px;
-    background-color: #76c7c0;
-}
