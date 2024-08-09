@@ -1,8 +1,30 @@
+
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
 const completedCounter = document.getElementById("completed-counter");
 const uncompletedCounter = document.getElementById("uncompleted-counter");
+
+
+function hidePlaceholder(params) {
+    const input = document.getElementById('principalTitle');
+    input.hidePlaceholder;
+}
+function showPlaceholder(){
+    const input = document.getElementById('principalTitle');
+    if (!input.value) {
+        input.placeholder = 'Hora de planear ...';
+    }
+}
+
+function changeTitle(){
+    const input = document.getElementById('principalTitle');
+    const title = document.getElementById('dynamicTitle');
+
+    title.textContent = input.value;
+    input.value = '';
+    showPlaceholder();
+}
 
 
 function addTask() {

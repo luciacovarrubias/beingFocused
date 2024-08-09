@@ -31,6 +31,26 @@ body {
         justify-self: stretch;
         align-self: center;
         grid-area: Title;
+
+          .principalTitle {
+            /* cursor:text; */
+            font-size: 3.5rem;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            width: 100%;
+            background: transparent;
+            text-align: center;
+            font-family: "Comfortaa", sans-serif;
+            color: rgb(255, 244, 244);
+            padding: 0;
+            margin: 15px 0px 15px 0px;
+          }
+          .principalTitle::placeholder{
+            color: rgba(255, 244, 244, 0.634);
+            font-family: "Comfortaa", sans-serif;
+            font-weight: bold;
+          }
       }
       
       .ToDoList {
