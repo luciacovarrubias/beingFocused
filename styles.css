@@ -301,38 +301,39 @@ body {
       }
       
       .Calendario {
-        justify-self: stretch;
+        justify-self: center;
         align-self: stretch;
         grid-area: Calendario;
-            width: 400px;
-            height: 550px;
+        text-align: left;
+            /* width: 400px; */
+            height: 510px;
              /* background: salmon; */
-            margin: 5% auto;
+            /* margin: 5% auto; */
+            /* border-radius: 15px 15px 15px 15px;
+            border: 2px solid #d8cdcd; */
             
           .header_calendar {
             width: 100%;
-            height: 45%;
-            background: linear-gradient(#616dd8, #061e93);
+            height: 35%;
+            background: rgba(3, 17, 96, 0.615);
             border-radius: 15px 15px 0px 0px;
             display: flex;
             flex-direction: column; }
             .header_calendar h1 {
-              margin: 30px 30px 0px 30px;
+              margin: 10px 10px 0px 30px;
               padding: 0px;
-              font-family: Arial;
-              color: white;
-              font-size: 100px; }
+              color: rgb(255, 244, 244);
+              font-size: 80px; }
             .header_calendar h5 {
               margin: 0px 30px;
               padding: 0px;
-              font-family: Arial;
-              color: white;
+              color: rgb(255, 244, 244);
               font-size: 40px; }
           
           .body_calendar {
             width: 100%;
             height: 55%;
-            background: white;
+            background: rgba(255, 255, 255, 0.616);
             border-radius: 0px 0px 15px 15px; }
           
           .container_details {
@@ -364,7 +365,7 @@ body {
                   .container_details .detail_1 .detail .circle .column, .container_details .detail_2 .detail .circle .column {
                     width: 80%;
                     height: 30px;
-                    background: #ececec;
+                    background: #6a717d;
                     margin: 0px auto;
                     position: relative;
                     top: -22px;
@@ -381,9 +382,10 @@ body {
               /* background: firebrick; */
               height: 20px;
               margin: auto;
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+              font-family: "Asap", sans-serif;
+            }
             .container_change_month button {
-              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+              font-family: "Asap", sans-serif;
               font-size: 20px;
               margin: auto 5px;
               border: none;
@@ -397,8 +399,8 @@ body {
             display: flex;
             margin: 0px auto; }
             .container_weedays span {
-              color: #506CF5;
-              font-family: Verdana, Geneva, Tahoma, sans-serif;
+              color: #404f97;
+              font-family: "Asap", sans-serif;
               height: 100%;
               line-height: 2.5; }
           
@@ -411,7 +413,7 @@ body {
             cursor: pointer; }
           
           .week_days_item:hover {
-            color: #506CF5; }
+            color:  #b1cbb4; }
           
           .prev_days {
             opacity: 0.5; }
@@ -429,17 +431,17 @@ body {
               height: 20px;
               margin: 5px 0px;
               padding: 0px;
-              font-family: Arial; }
+           }
             .container_days .today {
               display: flex; }
             .container_days .today:after {
               content: "";
               width: 19px;
               height: 19px;
-              background: #506CF5;
+              background:  #8fcc96bd;
               position: absolute;
               border-radius: 50%;
-              border: 5px solid #506CF5;
+              border: 5px solid  #8fcc96bd;
               opacity: 0.6;
               margin: -5px 0px 0px 1px; }
 
