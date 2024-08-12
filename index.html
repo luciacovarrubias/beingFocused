@@ -9,12 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <!-- <div class="Title">
-            <h1>beingFocused</h1>
-        </div> -->
+        <div class="Title">
+            <input type= "text"
+                    class = "principalTitle"
+                    name = "principalTitle"
+                    id = "principalTitle"
+                    placeholder = "Hora de planear ... 🖊"
+                    />
+        </div>
+        <h1 id="dynamicTitle"></h1>
+
 
         <div class="ToDoList">
             <div id="todo-container">
@@ -54,6 +62,7 @@
             <div class="pomodoroTitle">
                 <h1>Pomodoro</h1>
             </div>
+
             <div class="trabajo">
                 <label for="workTime">Trabajo:</label>
                 <input type="number" id="workTime" value="25" min="1">
@@ -63,7 +72,7 @@
                 <input type="number" id="breakTime" value="5" min="1">
             </div>
             <div class="descansoLargo">
-                <label for="longBreakTime">Descanso largo:</label>
+                <label for="longBreakTime">Descanso:</label>
                 <input type="number" id="longBreakTime" value="10" min="1">
             </div>
             <div class="textDisplay">
@@ -82,6 +91,7 @@
                     <button onclick="resetTimer()">Reiniciar</button>
                 </div>  
                 <div class="ciclosCompletados">
+                    <br><hr>
                     <h3>Ciclos completados: <span id="cycles">0</span></h3>
                 </div>   
             <div class="progressBar">
@@ -90,15 +100,66 @@
                 </div>
             </div>   
         </div>
-
-
-
+        <div class="Calendario">
+            <div class="header_calendar">
+                <h1 id="text_day">00</h1>
+                <h5 id="text_month">Null</h5>
+            </div>
+            <div class="body_calendar">
+                <div class="container_details">
+                    <div class="detail_1">
+                        <div class="detail">
+                            <div class="circle">
+                                <div class="column"></div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <div class="circle">
+                                <div class="column"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail_2">
+                        <div class="detail">
+                            <div class="circle">
+                                <div class="column"></div>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <div class="circle">
+                                <div class="column"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container_change_month">
+                    <button id="last_month">&lt;</button>
+                    <div>
+                        <span id="text_month_02">Null</span>
+                        <span id="text_year">0000</span>
+                    </div>
+                    <button id="next_month">&gt;</button>
+                </div>
+                <div class="container_weedays">
+                    <span class="week_days_item">DOM</span>
+                    <span class="week_days_item">LUN</span>
+                    <span class="week_days_item">MAR</span>
+                    <span class="week_days_item">MÍE</span>
+                    <span class="week_days_item">JUE</span>
+                    <span class="week_days_item">VIE</span>
+                    <span class="week_days_item">SÁB</span>
+                </div>
+                <div class="container_days">
+                    <span class="week_days_item item_day"></span>
+                    
+                </div>
+            </div>
         </div>
-        <div class="Calendario"></div>
         <div class="NoDefinido"></div>
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
