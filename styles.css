@@ -63,7 +63,7 @@ body {
             /* background: radial-gradient(circle, rgba(74, 60, 60, 0.028) 0%, rgb(41, 46, 196) 100%); */
             /* background: radial-gradient(ellipse at top, #888790, transparent),
                         radial-gradient(ellipse at bottom, #4e52a9, transparent); */
-            width: 400px;
+            /* width: 400px; */
             margin: 0 auto;
             border: 2px solid #d8cdcd;
             padding: 20px;
@@ -179,10 +179,11 @@ body {
         .pomodoroTitle {
         justify-self: stretch; 
         align-self: center; 
-        margin-top: 20px;
-        padding-bottom: 20px;
+        margin: 5px;
+        /* margin-top: 20px; */
+        /* padding-bottom: 20px; */
         font-size: 20px;
-        grid-area: pomodoroTitle; 
+        grid-area: pomodoroTitle;
         }
         .trabajo { 
             grid-area: trabajo;
@@ -258,10 +259,10 @@ body {
         align-self: center; 
         grid-area: progressBar; 
         }
-    
-        h1, h2, h3 {
+        
+        /* h1, h2, h3 {
             margin: 10px 0;
-        }
+        } */
         
         #timer {
             font-size: 2em;
