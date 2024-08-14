@@ -30,7 +30,7 @@ function changeTitle(){
 function addTask() {
     const task = inputBox.value.trim();
     if (!task){
-        alert("Please write down a task");
+        showCustomAlert("La tarea no puede estar vacía");
         return;
     }
 
@@ -65,7 +65,7 @@ function addTask() {
             checkbox.checked = false;
             updateCounters();
         } else if (update !== null && update.trim() === ""){
-            alert("La tarea no puede estar vacía!");
+            showCustomAlert("La tarea no puede estar vacía");
         }
     });
 
@@ -76,6 +76,26 @@ function addTask() {
         }
     })
 }
+
+function showCustomAlert(message) {
+    const alertBox = document.querySelector(".alerts");
+    const alertMsg = alertBox.querySelector(".msg");
+    
+    alertMsg.textContent = message;
+    alertBox.classList.remove("hide");
+    alertBox.classList.add("show");
+    
+    setTimeout(() => {
+        alertBox.classList.remove("show");
+        alertBox.classList.add("hide");
+    }, 3000);
+}
+
+document.querySelector(".close-btn").addEventListener("click", function() {
+    const alertBox = document.querySelector(".alerts");
+    alertBox.classList.remove("show");
+    alertBox.classList.add("hide");
+});
 
 function updateCounters(){
     const completedTasks = document.querySelectorAll(".completed").length;
