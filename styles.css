@@ -16,7 +16,7 @@ body {
 
     .container {  display: grid;
         grid-template-columns: 1.1fr 1.1fr 1.1fr;
-        grid-template-rows:  10% 30% 10%;
+        grid-template-rows:  10% 45% 10%;
         /* grid-auto-rows: 1fr; */
         gap: 9px 9px;
         grid-auto-flow: row dense;
@@ -25,8 +25,8 @@ body {
         align-items: center;
         grid-template-areas:
           "Title Title Title"
-          "ToDoList Pomodoro Spotify"
-          "ToDoList Calendario Spotify";
+          "ToDoList Pomodoro Calendario"
+          "ToDoList Spotify NoDefinido";
       }
       
       .Title {
@@ -146,168 +146,182 @@ body {
 
       }
       
+      .Pomodoro {
+        justify-self: stretch; 
+        align-self: stretch; 
+        grid-area: Pomodoro; 
+
+        .pomodoro-container {
+          text-align: center;
+          background: rgba(3, 17, 96, 0.615);
+          color: rgb(255, 244, 244);
+          /* width: 400px; */
+          margin: 0 auto;
+          border: 2px solid #d8cdcd;
+          padding: 20px;
+          border-radius: 15px;
+          display:grid; 
+        grid-template-columns: 1.5fr 1.5fr 1.5fr; 
+        grid-template-rows: 12% 10% 10% 10% 20% 10% 13% 10%; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "pomodoroTitle pomodoroTitle pomodoroTitle"
+          "trabajo descanso descansoLargo"
+          "trabajo descanso descansoLargo"
+          ". textDisplay ."
+          ". timerDisplay ."
+          "botonIniciar botonPausar botonReiniciar"
+          "ciclosCompletados ciclosCompletados ciclosCompletados"
+          "progressBar progressBar progressBar"; 
+      
+          .pomodoroTitle {
+          justify-self: stretch; 
+          align-self: center; 
+          margin: 5px;
+          /* margin-top: 20px; */
+          /* padding-bottom: 20px; */
+          font-size: 20px;
+          grid-area: pomodoroTitle;
+          }
+          .trabajo { 
+              grid-area: trabajo;
+              justify-self: stretch;
+              align-self: center;
+  
+              input {
+                  width: 30px;
+                  padding: 9px;
+                  border: 1px solid #fffbfb;
+                  border-radius: 15px;
+                  margin-right: 7px;
+                  font-size: 12px;
+              }
+           }
+          .descanso { 
+              grid-area: descanso;
+              justify-self: stretch; 
+              align-self: center; 
+  
+              input {
+                  width: 30px;
+                  padding: 9px;
+                  border: 1px solid #fffbfb;
+                  border-radius: 15px;
+                  margin-right: 7px;
+                  font-size: 12px;
+              }
+           }
+          .descansoLargo { 
+              grid-area: descansoLargo;
+              justify-self: stretch;
+              align-self: center;
+  
+              input {
+                  width: 30px;
+                  padding: 9px;
+                  border: 1px solid #fffbfb;
+                  border-radius: 15px;
+                  margin-right: 7px;
+                  font-size: 12px;
+              }
+           }
+          .textDisplay { 
+              font-size:medium;
+              grid-area: textDisplay;
+              align-self: center;
+          }
+          .timerDisplay { grid-area: timerDisplay; }
+          .botonIniciar { 
+              display:inline-block; 
+              grid-area: botonIniciar;
+              justify-self:end;
+              align-self: center;
+           }
+          .botonPausar { 
+              grid-area: botonPausar;
+              justify-self: stretch;
+              align-self: center;
+           }
+          .botonReiniciar { 
+              grid-area: botonReiniciar;
+              justify-self: start;
+              align-self: center;
+           }
+          .ciclosCompletados {
+          justify-self: center; 
+          align-self: center; 
+          grid-area: ciclosCompletados; 
+          }
+          .progressBar {
+          justify-self: stretch; 
+          align-self: center; 
+          grid-area: progressBar; 
+          }
+          
+          h1, h2, h3 {
+              margin: 10px 0;
+          }
+          
+          #timer {
+              font-size: 2em;
+              margin: 5px 0;
+          }
+          
+          button {
+              font-family: "Asap", sans-serif;
+              font-size: 12px;
+              color: #fffbfb;
+              cursor: pointer;
+              transition: 0.4s;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              padding-left: 20px;
+              padding-right: 20px;
+              border: 1px solid #fffbfb;
+              border-radius: 15px;
+              background-color: #676f9a;
+          }
+      
+          button:hover {
+              background-color: #bacbbc;
+            }
+          
+          #progressBarContainer {
+              width: 100%;
+              background-color: #e0e0e0;
+              margin: 20px 0;
+          }
+          
+          #progressBar {
+              width: 0%;
+              height: 10px;
+              background-color: #76c7c0;
+          }
+        }
+      }
+
       .Spotify {
         justify-self:stretch;
-        align-self:flex-start;
+        align-self:stretch;
         grid-area: Spotify;
+
+        .spotify-container{
+          margin-top: 100px;
+          background: rgba(3, 17, 96, 0.615);
+          margin: 0 auto;
+          color:rgb(255, 244, 244);
+          border-radius: 15px;
+        }
       }
       
-      .Pomodoro {
-        text-align: center;
-        background: rgba(3, 17, 96, 0.615);
-        color: rgb(255, 244, 244);
-        /* width: 400px; */
-        margin: 0 auto;
-        border: 2px solid #d8cdcd;
-        padding: 20px;
-        border-radius: 15px;
-        display:grid; 
-      grid-template-columns: 1.5fr 1.5fr 1.5fr; 
-      grid-template-rows: 12% 10% 10% 10% 20% 10% 13% 10%; 
-      gap: 0px 0px; 
-      grid-template-areas: 
-        "pomodoroTitle pomodoroTitle pomodoroTitle"
-        "trabajo descanso descansoLargo"
-        "trabajo descanso descansoLargo"
-        ". textDisplay ."
-        ". timerDisplay ."
-        "botonIniciar botonPausar botonReiniciar"
-        "ciclosCompletados ciclosCompletados ciclosCompletados"
-        "progressBar progressBar progressBar"; 
-      justify-self: stretch; 
-      align-self: stretch; 
-      grid-area: Pomodoro; 
-    
-        .pomodoroTitle {
-        justify-self: stretch; 
-        align-self: center; 
-        margin: 5px;
-        /* margin-top: 20px; */
-        /* padding-bottom: 20px; */
-        font-size: 20px;
-        grid-area: pomodoroTitle;
-        }
-        .trabajo { 
-            grid-area: trabajo;
-            justify-self: stretch;
-            align-self: center;
-
-            input {
-                width: 30px;
-                padding: 9px;
-                border: 1px solid #fffbfb;
-                border-radius: 15px;
-                margin-right: 7px;
-                font-size: 12px;
-            }
-         }
-        .descanso { 
-            grid-area: descanso;
-            justify-self: stretch; 
-            align-self: center; 
-
-            input {
-                width: 30px;
-                padding: 9px;
-                border: 1px solid #fffbfb;
-                border-radius: 15px;
-                margin-right: 7px;
-                font-size: 12px;
-            }
-         }
-        .descansoLargo { 
-            grid-area: descansoLargo;
-            justify-self: stretch;
-            align-self: center;
-
-            input {
-                width: 30px;
-                padding: 9px;
-                border: 1px solid #fffbfb;
-                border-radius: 15px;
-                margin-right: 7px;
-                font-size: 12px;
-            }
-         }
-        .textDisplay { 
-            font-size:medium;
-            grid-area: textDisplay;
-            align-self: center;
-        }
-        .timerDisplay { grid-area: timerDisplay; }
-        .botonIniciar { 
-            display:inline-block; 
-            grid-area: botonIniciar;
-            justify-self:end;
-            align-self: center;
-         }
-        .botonPausar { 
-            grid-area: botonPausar;
-            justify-self: stretch;
-            align-self: center;
-         }
-        .botonReiniciar { 
-            grid-area: botonReiniciar;
-            justify-self: start;
-            align-self: center;
-         }
-        .ciclosCompletados {
-        justify-self: center; 
-        align-self: center; 
-        grid-area: ciclosCompletados; 
-        }
-        .progressBar {
-        justify-self: stretch; 
-        align-self: center; 
-        grid-area: progressBar; 
-        }
-        
-        /* h1, h2, h3 {
-            margin: 10px 0;
-        } */
-        
-        #timer {
-            font-size: 2em;
-            margin: 5px 0;
-        }
-        
-        button {
-            font-family: "Asap", sans-serif;
-            font-size: 12px;
-            color: #fffbfb;
-            cursor: pointer;
-            transition: 0.4s;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 20px;
-            padding-right: 20px;
-            border: 1px solid #fffbfb;
-            border-radius: 15px;
-            background-color: #676f9a;
-        }
-    
-        button:hover {
-            background-color: #bacbbc;
-          }
-        
-        #progressBarContainer {
-            width: 100%;
-            background-color: #e0e0e0;
-            margin: 20px 0;
-        }
-        
-        #progressBar {
-            width: 0%;
-            height: 10px;
-            background-color: #76c7c0;
-        }
-      }
       
       .Calendario {
         justify-self: center;
         align-self: stretch;
         grid-area: Calendario;
-        text-align: left;
+
+        .calendario-container {
+          text-align: left;
             /* width: 400px; */
             height: 510px;
              /* background: salmon; */
@@ -450,6 +464,7 @@ body {
               margin: -5px 0px 0px 1px; }
     
       }
+        }
       
       .NoDefinido {
         justify-self: stretch;

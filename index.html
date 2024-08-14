@@ -24,7 +24,6 @@
         </div>
         <h1 id="dynamicTitle"></h1>
 
-
         <div class="ToDoList">
             <div id="todo-container">
                 <div id="header">
@@ -55,107 +54,122 @@
         
             </div>
         </div>
-    
-        <div class="Spotify">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4qma0GXfPOJfpt6cwt36yR?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-        <div class="Pomodoro">
-            <div class="pomodoroTitle">
-                <h1>Pomodoro</h1>
-            </div>
 
-            <div class="trabajo">
-                <label for="workTime">Trabajo:</label>
-                <input type="number" id="workTime" value="25" min="1">
-            </div>
-            <div class="descanso">
-                <label for="breakTime">Descanso:</label>
-                <input type="number" id="breakTime" value="5" min="1">
-            </div>
-            <div class="descansoLargo">
-                <label for="longBreakTime">Descanso:</label>
-                <input type="number" id="longBreakTime" value="10" min="1">
-            </div>
-            <div class="textDisplay">
-                <h2 id="timerLabel">Trabajo</h2>
-            </div>
-            <div class="timerDisplay">
-                <p id="timer">25:00</p>
-            </div>
-                <div class="botonIniciar">
-                    <button onclick="startTimer()">Iniciar</button>
+        <div class="Pomodoro">
+            <div class="pomodoro-container">
+                <div class="pomodoroTitle">
+                    <h1>Pomodoro</h1>
                 </div>
-                <div class="botonPausar">
-                    <button onclick="pauseTimer()">Pausar</button>
+    
+                <div class="trabajo">
+                    <label for="workTime">Trabajo:</label>
+                    <input type="number" id="workTime" value="25" min="1">
                 </div>
-                <div class="botonReiniciar">
-                    <button onclick="resetTimer()">Reiniciar</button>
-                </div>  
-                <div class="ciclosCompletados">
-                    <h3>Ciclos completados: <span id="cycles">0</span></h3>
-                </div>   
-            <div class="progressBar">
-                <div id="progressBarContainer">
-                    <div id="progressBar"></div>
+                <div class="descanso">
+                    <label for="breakTime">Descanso:</label>
+                    <input type="number" id="breakTime" value="5" min="1">
                 </div>
-            </div>   
+                <div class="descansoLargo">
+                    <label for="longBreakTime">Descanso:</label>
+                    <input type="number" id="longBreakTime" value="10" min="1">
+                </div>
+                <div class="textDisplay">
+                    <h2 id="timerLabel">Trabajo</h2>
+                </div>
+                <div class="timerDisplay">
+                    <p id="timer">25:00</p>
+                </div>
+                    <div class="botonIniciar">
+                        <button onclick="startTimer()">Iniciar</button>
+                    </div>
+                    <div class="botonPausar">
+                        <button onclick="pauseTimer()">Pausar</button>
+                    </div>
+                    <div class="botonReiniciar">
+                        <button onclick="resetTimer()">Reiniciar</button>
+                    </div>  
+                    <div class="ciclosCompletados">
+                        <h3>Ciclos completados: <span id="cycles">0</span></h3>
+                    </div>   
+                <div class="progressBar">
+                    <div id="progressBarContainer">
+                        <div id="progressBar"></div>
+                    </div>
+                </div> 
+            </div>
+              
         </div>
+
+        <div class="Spotify">
+            <div class="spotify-container">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/679wCT6dVMDBxrYa5NcrXL?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+
         <div class="Calendario">
-            <div class="header_calendar">
-                <h1 id="text_day">00</h1>
-                <h5 id="text_month">Null</h5>
-            </div>
-            <div class="body_calendar">
-                <div class="container_details">
-                    <div class="detail_1">
-                        <div class="detail">
-                            <div class="circle">
-                                <div class="column"></div>
+            <div class="calendario-container">
+                <div class="header_calendar">
+                    <h1 id="text_day">00</h1>
+                    <h5 id="text_month">Null</h5>
+                </div>
+                <div class="body_calendar">
+                    <div class="container_details">
+                        <div class="detail_1">
+                            <div class="detail">
+                                <div class="circle">
+                                    <div class="column"></div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <div class="circle">
+                                    <div class="column"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="detail">
-                            <div class="circle">
-                                <div class="column"></div>
+                        <div class="detail_2">
+                            <div class="detail">
+                                <div class="circle">
+                                    <div class="column"></div>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <div class="circle">
+                                    <div class="column"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="detail_2">
-                        <div class="detail">
-                            <div class="circle">
-                                <div class="column"></div>
-                            </div>
+                    <div class="container_change_month">
+                        <button id="last_month">&lt;</button>
+                        <div>
+                            <span id="text_month_02">Null</span>
+                            <span id="text_year">0000</span>
                         </div>
-                        <div class="detail">
-                            <div class="circle">
-                                <div class="column"></div>
-                            </div>
-                        </div>
+                        <button id="next_month">&gt;</button>
                     </div>
-                </div>
-                <div class="container_change_month">
-                    <button id="last_month">&lt;</button>
-                    <div>
-                        <span id="text_month_02">Null</span>
-                        <span id="text_year">0000</span>
+                    <div class="container_weedays">
+                        <span class="week_days_item">DOM</span>
+                        <span class="week_days_item">LUN</span>
+                        <span class="week_days_item">MAR</span>
+                        <span class="week_days_item">MÍE</span>
+                        <span class="week_days_item">JUE</span>
+                        <span class="week_days_item">VIE</span>
+                        <span class="week_days_item">SÁB</span>
                     </div>
-                    <button id="next_month">&gt;</button>
-                </div>
-                <div class="container_weedays">
-                    <span class="week_days_item">DOM</span>
-                    <span class="week_days_item">LUN</span>
-                    <span class="week_days_item">MAR</span>
-                    <span class="week_days_item">MÍE</span>
-                    <span class="week_days_item">JUE</span>
-                    <span class="week_days_item">VIE</span>
-                    <span class="week_days_item">SÁB</span>
-                </div>
-                <div class="container_days">
-                    <span class="week_days_item item_day"></span>
-                    
+                    <div class="container_days">
+                        <span class="week_days_item item_day"></span>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="NoDefinido"></div>
+            
+
+        <div class="NoDefinido">
+            <div class="recursos-container">
+                <h1>recursos</h1>
+            </div>
+        </div>
 
         <div class="alerts hide">
             <span class="fas fa-exclamation-circle"></span>
