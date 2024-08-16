@@ -9,14 +9,19 @@ body {
     /* margin-top: 50px; */
     height: 100%;
     margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* padding-left: 10px;
+    padding-right: 10px; */
+    display: flex;
+    flex-direction: column;
+    min-height:100vh ;
     /* overflow: hidden; */
     }
 
-    .container {  display: grid;
+    .container {  
+        flex: 1;
+        display: grid;
         grid-template-columns: 1.1fr 1.1fr 1.1fr;
-        grid-template-rows:  10% 45% 10%;
+        grid-template-rows:  15% 45% 10%;
         /* grid-auto-rows: 1fr; */
         gap: 9px 9px;
         grid-auto-flow: row dense;
@@ -61,16 +66,17 @@ body {
         grid-area: ToDoList;
 
         #todo-container {
-            background: rgba(3, 17, 96, 0.615);
+            background: rgba(3, 17, 96, 0.452);
             /* background: radial-gradient(circle, rgba(74, 60, 60, 0.028) 0%, rgb(41, 46, 196) 100%); */
             /* background: radial-gradient(ellipse at top, #888790, transparent),
                         radial-gradient(ellipse at bottom, #4e52a9, transparent); */
             /* width: 400px; */
             margin: 0 auto;
-            border: 2px solid #d8cdcd;
+            /* border: 2px solid #d8cdcd; */
             padding: 20px;
             color: rgb(255, 244, 244);
             border-radius: 15px;
+            margin-left: 10px;
         
         }
         #header {
@@ -153,11 +159,11 @@ body {
 
         .pomodoro-container {
           text-align: center;
-          background: rgba(3, 17, 96, 0.615);
+          background: rgba(3, 17, 96, 0.452);
           color: rgb(255, 244, 244);
           /* width: 400px; */
           margin: 0 auto;
-          border: 2px solid #d8cdcd;
+          /* border: 2px solid #d8cdcd; */
           padding: 20px;
           border-radius: 15px;
           display:grid; 
@@ -307,17 +313,17 @@ body {
 
         .spotify-container{
           margin-top: 100px;
-          background: rgba(3, 17, 96, 0.615);
           margin: 0 auto;
           color:rgb(255, 244, 244);
           border-radius: 15px;
+          /* border: 2px solid #d8cdcd; */
         }
       }
       
       
       .Calendario {
-        justify-self: center;
-        align-self: stretch;
+        justify-self: stretch;
+        align-self: flex-start;
         grid-area: Calendario;
 
         .calendario-container {
@@ -332,8 +338,9 @@ body {
           .header_calendar {
             width: 80%;
             height: 25%;
-            background: rgba(3, 17, 96, 0.615);
+            background: rgba(3, 17, 96, 0.452);
             border-radius: 15px 15px 0px 0px;
+            /* border: 2px solid #d8cdcd; */
             display: flex;
             flex-direction: column; }
             .header_calendar h1 {
@@ -351,7 +358,9 @@ body {
             width: 80%;
             height: 47%;
             background: rgba(255, 255, 255, 0.616);
-            border-radius: 0px 0px 15px 15px; }
+            border-radius: 0px 0px 15px 15px; 
+            /* border: 2px solid #d8cdcd; */
+          }
           
           .container_details {
             width: 100%;
@@ -470,8 +479,35 @@ body {
         justify-self: stretch;
         align-self: stretch;
         grid-area: NoDefinido;
+
+        .recursos-container {
+          width: 80%;
+          background: rgba(3, 17, 96, 0.452);
+          color: rgb(255, 244, 244);
+          padding: 20px;
+          border-radius: 15px;
+        }
+      
+        .recursos-items {
+          text-align: left;
+          
+        }
+        ul li {
+          list-style-type: none;
+          margin-top: 10px;
+          
+          color: #fffbfb;
+        }
+        span {
+          font-family: "Asap", sans-serif;
+          font-size: 15px;
+        }
+        span:hover {
+          color: #b1cbb4;
+        }
       }
       
+
     .alerts{
       background:#ffda9b;
       padding:20px 40px;
@@ -520,3 +556,48 @@ body {
       font-size: 18px;
       color:  #ce8600bb;
     }
+    
+  .footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.516);
+    color: rgba(255, 255, 255, 0.545);
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content img {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px; }
+
+.footer-text p {
+    margin: 0;
+    text-align: left;
+    line-height: 1.2; 
+}
+
+.footer-right a {
+    color: rgba(255, 255, 255, 0.659);
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #b1cbb4;
+}
