@@ -557,60 +557,6 @@ body {
       color:  #ce8600bb;
     }
     
-    /* .footer {
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.577);
-      color: white;
-      padding: 20px 0;
-      position: relative;
-      bottom: 0;
-  }
-  
-  img {
-      width: 5%;
-      height: auto; 
-      border-radius: 50%;
-      display: block; 
-      margin: 0; 
-  }
-  
-  .footer-container {
-      display: flex;
-      justify-content: space-between;
-      align-items:center;
-      padding: 0 20px;
-  }
-  
-  .footer-left {
-      text-align: left; 
-  }
-  
-  .footer-left table {
-
-      border-collapse: collapse;
-  }
-  
-  .footer-left td {
-      padding: 5px 10px;
-     
-      text-align: left; 
-  }
-  
-  .footer-right a {
-      color: white;
-      margin: 0 10px;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
-  }
-  
-  .footer-right a:hover {
-      color: #b1cbb4;
-  }
-  
-  .footer-right i {
-      font-size: 1.5rem;
-  } */
   .footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.516);
