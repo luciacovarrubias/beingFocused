@@ -77,6 +77,7 @@ function addTask() {
     })
 }
 
+
 function showCustomAlert(message) {
     const alertBox = document.querySelector(".alerts");
     const alertMsg = alertBox.querySelector(".msg");
@@ -97,14 +98,19 @@ document.querySelector(".close-btn").addEventListener("click", function() {
     alertBox.classList.add("hide");
 });
 
+inputBox.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        addTask();
+    }
+});
+
 function updateCounters(){
-    const completedTasks = document.querySelectorAll(".completed").length;
-    const uncompletedTasks = document.querySelectorAll("li:not(.completed)").length;
+    const completedTasks = listContainer.querySelectorAll(".completed").length;
+    const uncompletedTasks = listContainer.querySelectorAll("li:not(.completed)").length;
 
     completedCounter.textContent = completedTasks;
     uncompletedCounter.textContent = uncompletedTasks;
 
-    updateCounters();
 }
 
 let workTime = 25 * 60;

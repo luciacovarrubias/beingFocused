@@ -484,7 +484,8 @@ body {
           width: 80%;
           background: rgba(3, 17, 96, 0.452);
           color: rgb(255, 244, 244);
-          padding: 20px;
+          padding-top: 20px;
+          padding-bottom: 20px;
           border-radius: 15px;
         }
       
