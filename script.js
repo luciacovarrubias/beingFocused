@@ -6,10 +6,6 @@ const completedCounter = document.getElementById("completed-counter");
 const uncompletedCounter = document.getElementById("uncompleted-counter");
 
 
-function hidePlaceholder(params) {
-    const input = document.getElementById('principalTitle');
-    input.hidePlaceholder;
-}
 function showPlaceholder(){
     const input = document.getElementById('principalTitle');
     if (!input.value) {
@@ -171,11 +167,11 @@ function updateTimer() {
                 cycles++;
                 ciclo.play();
                 document.getElementById('cycles').textContent = cycles;
-                document.getElementById('timerLabel').textContent = 'Descanso Largo';
+                document.getElementById('timerLabel').textContent = 'Descanso';
                 descansoLargo.play();
             } else {
                 currentTime = breakTime;
-                document.getElementById('timerLabel').textContent = 'Descanso';
+                document.getElementById('timerLabel').textContent = 'Pausa';
                 descanso.play();
             }
             isWork = false;
