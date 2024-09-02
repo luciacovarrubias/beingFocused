@@ -1,10 +1,16 @@
 
 body {
+  background-image: url(images/Hypercolor.png);
     /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(5) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(259, 13%, 0%, 0.13)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
     /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(54, 0%, 100%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(0, 3%, 71%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
-    background: rgb(0, 0, 0);
-    background: radial-gradient(circle, rgba(219, 211, 211, 0.028)0%,rgb(49, 58, 109) 100%);
-    font-family: "Asap", sans-serif;
+    /* background: rgb(0, 0, 0); */
+    /* background: radial-gradient(at right center, rgba(32, 32, 32, 0.9), rgba(20, 18, 17, 0.7), rgba(60, 56, 53, 0.5)); */
+    /* background: radial-gradient(at right center, rgba(64, 64, 64, 0.8), rgba(41, 37, 36, 0.6), rgba(120, 113, 108, 0.4)); */
+    /* background: radial-gradient(at right center, rgb(64, 64, 64), rgb(41, 37, 36), rgb(120, 113, 108)); */
+    /* background: radial-gradient(circle at 100%, #333333, #33333378 50%, #eeeeee 75%, #3333338a 75%); */
+    /* background: radial-gradient(at right top, rgb(254, 243, 199), rgba(0, 0, 0, 0), rgb(207, 250, 254)); */
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Roboto", sans-serif;
     text-align: center;
     /* margin-top: 50px; */
     height: 100%;
@@ -48,15 +54,15 @@ body {
             width: 100%;
             background: transparent;
             text-align: center;
-            font-family: "Comfortaa", sans-serif;
+            font-family: "Roboto", sans-serif;
             color: rgb(255, 244, 244);
             padding: 0;
             margin: 15px 0px 15px 0px;
           }
           .principalTitle::placeholder{
             color: rgba(255, 244, 244, 0.634);
-            font-family: "Comfortaa", sans-serif;
-            font-weight: bold;
+            font-family: "Roboto", sans-serif;
+            font-weight:lighter;
           }
       }
       
@@ -66,7 +72,8 @@ body {
         grid-area: ToDoList;
 
         #todo-container {
-            background: rgba(3, 17, 96, 0.452);
+          background-color: rgba(40, 40, 40, 0.551);
+            /* background: rgba(3, 17, 96, 0.452); */
             /* background: radial-gradient(circle, rgba(74, 60, 60, 0.028) 0%, rgb(41, 46, 196) 100%); */
             /* background: radial-gradient(ellipse at top, #888790, transparent),
                         radial-gradient(ellipse at bottom, #4e52a9, transparent); */
@@ -74,7 +81,7 @@ body {
             margin: 0 auto;
             /* border: 2px solid #d8cdcd; */
             padding: 20px;
-            color: rgb(255, 244, 244);
+            color: #FFFEFF;
             border-radius: 15px;
             margin-left: 10px;
         
@@ -87,35 +94,37 @@ body {
         
         h1{
             margin-bottom: 20px;
-            color: white;
+            color: #FFFEFF;
         }
         
         #input-box {
             width: 200px;
             padding: 10px;
-            border: 1px solid #fffbfb;
+            border: 1px #fffbfb;
             border-radius: 15px;
             margin-right: 5px;
-            font-size: 15px;
+            font-size: 12px;
+            background-color: #EDECEC;
         }
         
         #input-buttom {
-            font-family: "Asap", sans-serif;
+            font-family: "Roboto", sans-serif;
             font-size: 12px;
-            color: #fffbfb;
+            color: #EDECEC;
             cursor: pointer;
             transition: 0.4s;
             padding-top: 10px;
             padding-bottom: 10px;
             padding-left: 20px;
             padding-right: 20px;
-            border: 1px solid #fffbfb;
+            border: 1px #fffbfb;
             border-radius: 15px;
-            background-color: #676f9a;
+            background-color: #A69F9F;
         }
         
         #input-buttom:hover{
-            background-color: #bacbbc;
+            background-color: #EDECEC;
+            color: #7A7B7B;
         }
         
         ul {
@@ -159,8 +168,9 @@ body {
 
         .pomodoro-container {
           text-align: center;
-          background: rgba(3, 17, 96, 0.452);
-          color: rgb(255, 244, 244);
+          background-color: rgba(40, 40, 40, 0.551);
+          /* background: rgba(3, 17, 96, 0.452); */
+          color:#FFFEFF;
           /* width: 400px; */
           margin: 0 auto;
           /* border: 2px solid #d8cdcd; */
@@ -197,10 +207,12 @@ body {
               input {
                   width: 30px;
                   padding: 9px;
-                  border: 1px solid #fffbfb;
+                  background-color: #EDECEC;
+                  border: 1px #EDECEC;
                   border-radius: 15px;
                   margin-right: 7px;
                   font-size: 12px;
+                  color:#848484;
               }
            }
           .descanso { 
@@ -211,10 +223,12 @@ body {
               input {
                   width: 30px;
                   padding: 9px;
-                  border: 1px solid #fffbfb;
+                  background-color: #EDECEC;
+                  border: 1px #EDECEC;
                   border-radius: 15px;
                   margin-right: 7px;
                   font-size: 12px;
+                  color:#848484;
               }
            }
           .descansoLargo { 
@@ -225,10 +239,12 @@ body {
               input {
                   width: 30px;
                   padding: 9px;
-                  border: 1px solid #fffbfb;
+                  background-color: #EDECEC;
+                  border: 1px #EDECEC;
                   border-radius: 15px;
                   margin-right: 7px;
                   font-size: 12px;
+                  color:#848484;
               }
            }
           .textDisplay { 
@@ -274,34 +290,36 @@ body {
           }
           
           button {
-              font-family: "Asap", sans-serif;
+              font-family: "Roboto", sans-serif;
               font-size: 12px;
-              color: #fffbfb;
+              color: #EDECEC;
               cursor: pointer;
               transition: 0.4s;
               padding-top: 10px;
               padding-bottom: 10px;
               padding-left: 20px;
               padding-right: 20px;
-              border: 1px solid #fffbfb;
+              border: 1px #fffbfb;
               border-radius: 15px;
-              background-color: #676f9a;
+              background-color: #A69F9F;
           }
       
           button:hover {
-              background-color: #bacbbc;
+            background-color: #EDECEC;
+            color: #7A7B7B;
             }
           
           #progressBarContainer {
               width: 100%;
-              background-color: #e0e0e0;
+              background-color: #9a159a;
+              border-radius: 15px;
               margin: 20px 0;
           }
           
           #progressBar {
               width: 0%;
               height: 10px;
-              background-color: #76c7c0;
+              background-color: #ad1010;
           }
         }
       }
@@ -314,13 +332,12 @@ body {
         .spotify-container{
           margin-top: 100px;
           margin: 0 auto;
-          color:rgb(255, 244, 244);
+          color:#FFFEFF;
           border-radius: 15px;
           /* border: 2px solid #d8cdcd; */
         }
       }
-      
-      
+
       .Calendario {
         justify-self: stretch;
         align-self: flex-start;
@@ -338,7 +355,8 @@ body {
           .header_calendar {
             width: 80%;
             height: 25%;
-            background: rgba(3, 17, 96, 0.452);
+            background-color: rgba(40, 40, 40, 0.551);
+            /* background: #2828287d; */
             border-radius: 15px 15px 0px 0px;
             /* border: 2px solid #d8cdcd; */
             display: flex;
@@ -346,18 +364,18 @@ body {
             .header_calendar h1 {
               margin: 10px 10px 0px 30px;
               padding: 0px;
-              color: rgb(255, 244, 244);
+              color: #FFFEFF;
               font-size: 40px; }
             .header_calendar h5 {
               margin: 0px 30px;
               padding: 0px;
-              color: rgb(255, 244, 244);
+              color:#FFFEFF;
               font-size: 40px; }
           
           .body_calendar {
             width: 80%;
             height: 47%;
-            background: rgba(255, 255, 255, 0.616);
+            background: #edecece2;
             border-radius: 0px 0px 15px 15px; 
             /* border: 2px solid #d8cdcd; */
           }
@@ -408,10 +426,10 @@ body {
               /* background: firebrick; */
               height: 20px;
               margin: auto;
-              font-family: "Asap", sans-serif;
+              font-family: "Roboto", sans-serif;
             }
             .container_change_month button {
-              font-family: "Asap", sans-serif;
+              font-family: "Roboto", sans-serif;
               font-size: 20px;
               margin: auto 5px;
               border: none;
@@ -425,8 +443,8 @@ body {
             display: flex;
             margin: 0px auto; }
             .container_weedays span {
-              color: #404f97;
-              font-family: "Asap", sans-serif;
+              color: #6a717d;
+              font-family: "Roboto", sans-serif;
               height: 100%;
               line-height: 1; }
           
@@ -439,7 +457,8 @@ body {
             cursor: pointer; }
           
           .week_days_item:hover {
-            color:  #b1cbb4; }
+            color:  #b1aaaa; 
+            transition: 0.4s;}
           
           .prev_days {
             opacity: 0.5; }
@@ -465,10 +484,10 @@ body {
               content: "";
               width: 19px;
               height: 19px;
-              background:  #8fcc96bd;
+              background:  #A69F9F;
               position: absolute;
               border-radius: 50%;
-              border: 5px solid  #8fcc96bd;
+              border: 4px solid  #A69F9F;
               opacity: 0.6;
               margin: -5px 0px 0px 1px; }
     
@@ -482,8 +501,8 @@ body {
 
         .recursos-container {
           width: 80%;
-          background: rgba(3, 17, 96, 0.452);
-          color: rgb(255, 244, 244);
+          background-color: rgba(40, 40, 40, 0.551);
+          color: #FFFEFF;
           padding-top: 20px;
           padding-bottom: 20px;
           border-radius: 15px;
@@ -497,14 +516,16 @@ body {
           list-style-type: none;
           margin-top: 10px;
           
-          color: #fffbfb;
+          color: #FFFEFF;
         }
         span {
-          font-family: "Asap", sans-serif;
+          font-family: "Roboto", sans-serif;
           font-size: 15px;
+          font-weight: 200;
         }
         span:hover {
-          color: #b1cbb4;
+          color: #EDECEC;
+          transition: 0.4s;
         }
       }
       
@@ -600,5 +621,5 @@ body {
 }
 
 .footer-right a:hover {
-    color: #b1cbb4;
+    color: #EDECEC;
 }
