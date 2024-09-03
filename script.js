@@ -41,6 +41,9 @@ function addTask() {
         `;
 
     listContainer.appendChild(li);
+    setTimeout(() => {
+        li.classList.add("show");
+    }, 10);
     inputBox.value = "";
 
     const checkbox = li.querySelector("input");
@@ -106,6 +109,7 @@ function updateCounters(){
 
     completedCounter.textContent = completedTasks;
     uncompletedCounter.textContent = uncompletedTasks;
+    
 
 }
 
