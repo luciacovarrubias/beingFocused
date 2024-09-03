@@ -1,35 +1,23 @@
 
 body {
-  background-image: url(images/Hypercolor.png);
-    /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(5) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0,0%,100%,1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(259, 13%, 0%, 0.13)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
-    /* background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='20' height='20' patternTransform='scale(3) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(54, 0%, 100%, 1)'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z'  stroke-width='0.5' stroke='hsla(0, 3%, 71%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"); */
-    /* background: rgb(0, 0, 0); */
-    /* background: radial-gradient(at right center, rgba(32, 32, 32, 0.9), rgba(20, 18, 17, 0.7), rgba(60, 56, 53, 0.5)); */
-    /* background: radial-gradient(at right center, rgba(64, 64, 64, 0.8), rgba(41, 37, 36, 0.6), rgba(120, 113, 108, 0.4)); */
-    /* background: radial-gradient(at right center, rgb(64, 64, 64), rgb(41, 37, 36), rgb(120, 113, 108)); */
-    /* background: radial-gradient(circle at 100%, #333333, #33333378 50%, #eeeeee 75%, #3333338a 75%); */
-    /* background: radial-gradient(at right top, rgb(254, 243, 199), rgba(0, 0, 0, 0), rgb(207, 250, 254)); */
-    /* font-family: "Roboto", sans-serif; */
+    background-image: url(images/Hypercolor.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    /* margin-top: 50px; */
     height: 100%;
     margin: 0;
-    /* padding-left: 10px;
-    padding-right: 10px; */
     display: flex;
     flex-direction: column;
     min-height:100vh ;
-    /* overflow: hidden; */
     }
 
     .container {  
         flex: 1;
         display: grid;
-        grid-template-columns: 1.1fr 1.1fr 1.1fr;
+        grid-template-columns: 1.5fr 1.1fr 1.1fr;
         grid-template-rows:  15% 45% 10%;
-        /* grid-auto-rows: 1fr; */
-        gap: 9px 9px;
+        gap: 10px 10px;
         grid-auto-flow: row dense;
         justify-content: center;
         justify-items: center;
@@ -60,9 +48,9 @@ body {
             margin: 15px 0px 15px 0px;
           }
           .principalTitle::placeholder{
-            color: rgba(255, 244, 244, 0.634);
+            color: rgba(255, 244, 244, 0.448);
             font-family: "Roboto", sans-serif;
-            font-weight:lighter;
+            font-weight:bold;
           }
       }
       
@@ -83,7 +71,7 @@ body {
             padding: 20px;
             color: #FFFEFF;
             border-radius: 15px;
-            margin-left: 10px;
+            margin-left: 80px;
         
         }
         #header {
@@ -140,6 +128,11 @@ body {
             margin-bottom: 10px;
             padding: 10px;
             margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        li.show {
+          opacity: 1;
         }
         
         .edit-btn, .delete-btn {
@@ -311,7 +304,7 @@ body {
           
           #progressBarContainer {
               width: 100%;
-              background-color: #9a159a;
+              background-color: #A69F9F;
               border-radius: 15px;
               margin: 20px 0;
           }
@@ -319,7 +312,9 @@ body {
           #progressBar {
               width: 0%;
               height: 10px;
-              background-color: #ad1010;
+              border-radius: 15px;
+              background-color: #EDECEC;
+              transition: width 0.5s ease-in-out;
           }
         }
       }
@@ -586,6 +581,7 @@ body {
     padding: 20px 0;
     position: relative;
     bottom: 0;
+    background-image: url(images/Hypercolor.png);
 }
 
 .footer-container {
@@ -613,7 +609,7 @@ body {
 }
 
 .footer-right a {
-    color: rgba(255, 255, 255, 0.659);
+    color: #A69F9F;
     margin: 0 10px;
     font-size: 1.5rem;
     text-decoration: none;
